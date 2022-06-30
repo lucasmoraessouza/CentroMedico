@@ -1,25 +1,20 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   height: 100%;
   background-color: ${({ theme }) => theme.colors.white};
 `;
 
-export const Header = styled.div`
+export const Section = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: ${({ theme }) => theme.colors.primary};
-  height: 65px;
-  padding-left: 20px;
-  padding-right: 20px;
-
-  img {
-    width: 42px;
-    height: 42px;
-    border-radius: 50%;
-  }
+  flex-direction: column;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 100%;
+  justify-content: flex-start;
 `;
 
 export const Content = styled.div`
@@ -55,14 +50,50 @@ export const TitleBaseboard = styled.p`
   padding: 0px 25px;
   margin-bottom: 0px;
   line-height: 21px;
-  margin-top: 50px;
+  margin-top: 35px;
   color: ${({ theme }) => theme.colors.primary};
 `;
 
 export const Bar = styled.div`
   margin-left: 20px;
   margin-right: 20px;
-  border: 1px solid #000;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
   margin-top: 10px;
-  margin-bottom: 160px;
+  /* margin-bottom: 160px; */
+`;
+
+export const ContainerCard = styled.div`
+  overflow: overlay;
+`;
+
+export const CardLine = styled.div`
+  display: flex;
+  width: 150%;
+  margin-top: 10px;
+  margin-left: 20px;
+`;
+
+export const CardOption = styled.div`
+  width: 280px;
+  height: 90px;
+  border: solid 3px ${({ theme }) => theme.colors.primary};
+  border-radius: 15px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const InfoCard = styled.span`
+  color: ${({ theme }) => theme.colors.primary};
+  font-size: 18px;
+  margin-left: 10px;
+  font-weight: 600;
+`;
+
+export const ContainerBtnWhatsApp = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  margin-bottom: 30px;
 `;
