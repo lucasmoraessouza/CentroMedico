@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  height: 100%;
+  width: 100%;
+  min-height:100%;
   background-color: ${({ theme }) => theme.colors.primary};
 `;
 
@@ -9,10 +10,10 @@ export const Header = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 100px;
+  padding-top: 50px;
   img {
-    width: 145px;
-    height: 145px;
+    width: 125px;
+    height: 125px;
     border-radius: 50%;
     background-size: cover;
   }
@@ -20,7 +21,7 @@ export const Header = styled.div`
 
 export const TitleHeader = styled.p`
   font-weight: 700;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 21px;
   margin: 20px 0px 0px 0px;
   color: ${({ theme }) => theme.colors.white};
@@ -65,11 +66,23 @@ export const DivMap = styled.div`
 
   p {
     font-weight: 500;
-    font-size: 23px;
+    font-size: 18px;
     margin-top: 5px;
     margin-left: 15px;
     line-height: 21px;
     margin-bottom: 0px;
     color: ${({ theme }) => theme.colors.white};
+  }
+`;
+
+export const FooterImg = styled.div`
+  padding-top: 50px;
+  padding-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    width: 250px;
   }
 `;
