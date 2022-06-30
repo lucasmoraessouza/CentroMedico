@@ -1,5 +1,5 @@
 import * as C from "./styles";
-import profileImg from "../../../../assets/images/profile-image.png";
+import profileImg from "../../assets/images/profile-image.png";
 import { Menu } from "react-feather";
 
 export default function HeaderHome() {

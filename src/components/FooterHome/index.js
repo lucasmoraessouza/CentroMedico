@@ -1,5 +1,5 @@
 import * as C from "./styles";
-import logo_branco from "../../../../assets/images/logo_branco.png";
+import logo_branco from "../../assets/images/logo_branco.png";
 
 export default function FooterHome() {
   return (

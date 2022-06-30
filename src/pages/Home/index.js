@@ -1,6 +1,6 @@
 import * as C from "./styles";
-import HeaderHome from "./components/HeaderHome";
-import FooterHome from "./components/FooterHome";
+import HeaderHome from "../../components/HeaderHome";
+import FooterHome from "../../components/FooterHome";
 import CalendarioIcon from "../../assets/svgs/calendario.svg";
 import ProntuarioIcon from "../../assets/svgs/prontuario.svg";
 import PranchetaIcon from "../../assets/svgs/prancheta.svg";
