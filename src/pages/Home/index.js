@@ -9,10 +9,10 @@ import Results from "./components/Results";
 import Procedures from "./components/Procedures";
 import ContactUs from "./components/ContactUs";
 import LeftMenu from "../../components/LeftMenu";
-
+import MyProfile from "./components/MyProfile";
 export default function Home() {
   const { components } = StateGlobal();
-  const [ openLeft , setOpenLeft] = useState(false)
+  const [openLeft, setOpenLeft] = useState(false);
   return (
     <>
       {openLeft === true ? (
@@ -20,7 +20,7 @@ export default function Home() {
       ) : (
         <C.Container>
           <div>
-            <HeaderHome  openLeft={openLeft} setOpenLeft={setOpenLeft}/>
+            <HeaderHome openLeft={openLeft} setOpenLeft={setOpenLeft} />
           </div>
 
           <C.Section>
@@ -34,6 +34,8 @@ export default function Home() {
               <Procedures />
             ) : components === 4 ? (
               <ContactUs />
+            ) : components === 5 ? (
+              <MyProfile />
             ) : (
               ""
             )}

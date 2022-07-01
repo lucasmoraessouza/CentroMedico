@@ -22,34 +22,38 @@ const style = {
 };
 
 export default function ModalFilterResult(props) {
-// const { bodyFilterHistoric , setBodyFilterHistoric } = StateGlobal()
-const [ startDate, setStartDate ] = useState()
-const [ endDate, setEndDate ] = useState()
-const [ validate, setValidate ] = useState(true)
+  // const { bodyFilterHistoric , setBodyFilterHistoric } = StateGlobal()
+  const [startDate, setStartDate] = useState();
+  const [endDate, setEndDate] = useState();
+  const [validate, setValidate] = useState(true);
 
-function Disabled() {
-  if(startDate === undefined || startDate === "" || endDate === undefined ||  endDate === ""  ){
-    setValidate(true)
-  }else{
-    setValidate(false)
+  function Disabled() {
+    if (
+      startDate === undefined ||
+      startDate === "" ||
+      endDate === undefined ||
+      endDate === ""
+    ) {
+      setValidate(true);
+    } else {
+      setValidate(false);
+    }
   }
-  
-}
 
-useEffect(()=>{
-  Disabled()
-}, [startDate , endDate])
+  useEffect(() => {
+    Disabled();
+  }, [startDate, endDate]);
 
-// function sendFilter() {
-//   setBodyFilterHistoric({
-//     start: startDate,
-//       end: endDate,
-//       page: 1,
-//       send: true
-//   })
+  // function sendFilter() {
+  //   setBodyFilterHistoric({
+  //     start: startDate,
+  //       end: endDate,
+  //       page: 1,
+  //       send: true
+  //   })
 
-//   props.funcao()
-// }
+  //   props.funcao()
+  // }
 
   return (
     <div>
@@ -66,14 +70,20 @@ useEffect(()=>{
       >
         <Box sx={style}>
           <X
-            color="#08559F"
+            color="#0F2554"
             style={{ position: "absolute", right: "15px", top: "15px" }}
             onClick={props.funcao}
           />
           <Typography
             variant="h6"
             component="h2"
-            style={{ color: "#08559F", marginBottom: "10px" }}
+            style={{
+              color: "#0F2554",
+              marginBottom: "10px",
+              fontSize: "20px",
+              fontWeight: 600,
+              fontFamily: "Montserrat",
+            }}
           >
             Filtrar por período:
           </Typography>
@@ -89,7 +99,9 @@ useEffect(()=>{
               id="from"
               type="date"
               style={{ marginBottom: "15px" }}
-              onChange={(e) => {setStartDate(e.target.value)}}
+              onChange={(e) => {
+                setStartDate(e.target.value);
+              }}
             />
             <label id="to"> Até</label>
             <TextField
@@ -97,11 +109,15 @@ useEffect(()=>{
               id="to"
               type="date"
               style={{ marginBottom: "30px" }}
-              onChange={(e) => {setEndDate(e.target.value)}}
+              onChange={(e) => {
+                setEndDate(e.target.value);
+              }}
             />
           </div>
-          <SecondButton text="Filtrar" disabled={validate} 
-          funcao={console.log('teste')} 
+          <SecondButton
+            text="Filtrar"
+            disabled={validate}
+            funcao={console.log("teste")}
           />
         </Box>
       </Modal>

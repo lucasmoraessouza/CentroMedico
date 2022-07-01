@@ -6,7 +6,7 @@ export const BtnWhatsApp = styled.button`
   border: none;
   border-radius: 5px;
   width: 85%;
-  height: 60px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;

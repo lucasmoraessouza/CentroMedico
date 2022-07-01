@@ -3,15 +3,32 @@ import profileImg from "../../assets/images/profile-image.png";
 import { Menu } from "react-feather";
 import { StateGlobal } from "../../context/registerContext";
 import { IoIosArrowBack } from "react-icons/io";
+
 export default function HeaderHome(props) {
   const { components, setComponents } = StateGlobal();
+  const backValue = localStorage.getItem("backValue");
+
+  function screenChangeBack() {
+    if (backValue) {
+      props.setOpenLeft(true);
+    } else {
+      setComponents(0);
+    }
+  }
 
   return (
     <>
       {components !== 0 ? (
         <C.Header>
-          <C.ActionBack onClick={() => {setComponents(0)}}>
-            <IoIosArrowBack fill="#fff" style={{height: '2em', width: '2em'}}/>
+          <C.ActionBack
+            onClick={() => {
+              screenChangeBack();
+            }}
+          >
+            <IoIosArrowBack
+              fill="#fff"
+              style={{ height: "2em", width: "2em" }}
+            />
             <span>Voltar</span>
           </C.ActionBack>
           <img alt="profile" src={profileImg} />

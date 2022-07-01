@@ -53,10 +53,13 @@ export default function LeftMenu(props) {
     } else if (e === "Fale Conosco") {
       setComponents(4);
       props.setOpenLeft(false);
-    } else {
+    } else if (e === "Meu Perfil") {
+      setComponents(5);
+      props.setOpenLeft(false);
+    }else{
+      
     }
   }
-
   return (
     <C.Container>
       <X

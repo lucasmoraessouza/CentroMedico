@@ -25,7 +25,7 @@ export default function FooterHome() {
 
       <div
         onClick={() => {
-          setComponents(0);
+          setComponents(5);
         }}
       >
         <FiUser
