@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import * as C from "./styles";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { BsPrinterFill } from "react-icons/bs";
+import IconPrint from "../../../../../assets/svgs/printWhite.svg"
 export default function ResultBlock(props) {
   return (
     <C.Container>
@@ -34,7 +34,7 @@ export default function ResultBlock(props) {
         ) : (
           <C.ContainerBtnPrint>
             <C.BtnPrint>
-              <BsPrinterFill />
+              <img alt="IconPrint" src={IconPrint} width={20}/>
               <span>Imprimir</span>
             </C.BtnPrint>
           </C.ContainerBtnPrint>
