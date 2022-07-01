@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Header = styled.div`
   display: flex;
   flex-direction: row;
@@ -16,4 +15,19 @@ export const Header = styled.div`
     height: 42px;
     border-radius: 50%;
   }
+`;
+
+export const ActionBack = styled.div`
+  display: flex;
+  align-items: center;
+  align-content: center;
+  width: 75px;
+  height: 100%;
+  justify-content: flex-start;
+
+span {
+  color: ${({ theme }) => theme.colors.white};
+  font-size: 18px;
+}
+
 `;
