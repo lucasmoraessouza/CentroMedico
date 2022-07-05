@@ -14,4 +14,20 @@ export const GlobalStyle = createGlobalStyle`
   #root {
     height: 100%;
   }
+
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    background-color: transparent;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: transparent;
+  }
+  
+  ::-webkit-scrollbar-thumb:active {
+    background: transparent;
+    
+  }
+
+
   `;

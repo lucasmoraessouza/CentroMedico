@@ -9,6 +9,7 @@ const theme = {
     black: "#000",
     title_login: "#5E5873",
     text_login: "#6E6B7B",
+    text_footer: "#9B9B9B",
   },
 };
 export default theme;

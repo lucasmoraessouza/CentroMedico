@@ -58,7 +58,7 @@ export default function FooterHome() {
           color="#0F2554"
           style={{ height: "2em", width: "2em" }}
         />
-        <p>Resustados</p>
+        <p>Resultados</p>
       </div>
     </C.Container>
   );

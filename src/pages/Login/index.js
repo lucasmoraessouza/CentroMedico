@@ -3,7 +3,19 @@ import * as C from "./styles";
 import background_logo from "../../assets/images/logo-centro-medico.png";
 import TextField from "@mui/material/TextField";
 import PrimaryButton from "../../components/Button";
+import { useNavigate } from "react-router-dom";
+
 export default function Login() {
+  const navigate = useNavigate();
+
+  function handleRegister() {
+    navigate("/register/1");
+  }
+
+  function handleLogin() {
+    navigate("/home");
+  }
+
   return (
     <C.Container>
       <C.Header />
@@ -28,11 +40,13 @@ export default function Login() {
             <TextField size="small" placeholder="⚉ ⚉ ⚉ ⚉ ⚉ ⚉ ⚉ ⚉" />
           </C.InputAndLabel>
           <C.ContainerButton>
-            <PrimaryButton text="Acessar" />
+            <PrimaryButton text="Acessar" funcao={handleLogin} />
           </C.ContainerButton>
           <C.RegisterText>
             <p>Não tem cadastro?</p>
-            <p id="register">Cadastre-se</p>
+            <p id="register" onClick={handleRegister}>
+              Cadastre-se
+            </p>
           </C.RegisterText>
         </C.Form>
       </C.Content>
