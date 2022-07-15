@@ -1,5 +1,5 @@
 import * as C from "./styles";
-import { StateGlobal } from "../../context/registerContext";
+import { StateGlobal } from "../../context/GlobalContext";
 import { RiHome2Line } from "react-icons/ri";
 import { FiUser } from "react-icons/fi";
 import { AiOutlineCalendar } from "react-icons/ai";

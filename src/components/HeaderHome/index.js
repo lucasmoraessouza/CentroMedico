@@ -1,7 +1,7 @@
 import * as C from "./styles";
 import profileImg from "../../assets/images/profile-image.png";
 import { Menu } from "react-feather";
-import { StateGlobal } from "../../context/registerContext";
+import { StateGlobal } from "../../context/GlobalContext";
 import { IoIosArrowBack } from "react-icons/io";
 
 export default function HeaderHome(props) {

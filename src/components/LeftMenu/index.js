@@ -1,7 +1,7 @@
 import * as C from "./styles";
 import { X, Calendar, Mail, Clipboard, User, ArrowLeft } from "react-feather";
 import profileImg from "../../assets/images/profile-image.png";
-import { StateGlobal } from "../../context/registerContext";
+import { StateGlobal } from "../../context/GlobalContext";
 import LogoBranco from "../../assets/images/logo_branco.png";
 
 export default function LeftMenu(props) {

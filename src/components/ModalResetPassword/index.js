@@ -7,7 +7,7 @@ import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
 import SecondButton from "../Button/index";
 import { X } from "react-feather";
-// import { StateGlobal } from "../../Utility/Context/RegisterContext";
+// import { StateGlobal } from "../../Utility/Context/GlobalContext";
 
 const style = {
   position: "absolute",

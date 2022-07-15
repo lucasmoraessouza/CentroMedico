@@ -5,7 +5,7 @@ import ProntuarioIcon from "../../../../assets/svgs/prontuario.svg";
 import PranchetaIcon from "../../../../assets/svgs/prancheta.svg";
 import CartaIcon from "../../../../assets/svgs/carta.svg";
 import ButtonWhatsApp from "../../../../components/ButtonWhatsApp";
-import { StateGlobal } from "../../../../context/registerContext";
+import { StateGlobal } from "../../../../context/GlobalContext";
 
 export default function SwitchHome() {
   const { components, setComponents } = StateGlobal();

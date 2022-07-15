@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import * as C from "./styles";
-import { StateGlobal } from "../../context/registerContext";
+import { StateGlobal } from "../../context/GlobalContext";
 import HeaderHome from "../../components/HeaderHome";
 import FooterHome from "../../components/FooterHome";
 import SwitchHome from "./components/SwitchHome";

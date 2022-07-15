@@ -4,7 +4,7 @@ import theme from "./assets/themes/theme";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";
-import ContextProvider from "./context/registerContext";
+import ContextProvider from "./context/GlobalContext";
 import StepOne from "./pages/Register/StepOne";
 import StepTwo from "./pages/Register/StepTwo";
 import StepThree from "./pages/Register/StepThree";
