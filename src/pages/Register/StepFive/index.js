@@ -2,11 +2,13 @@ import * as C from "./styles";
 import background_logo from "../../../assets/images/logo-centro-medico.png";
 import SuccessIcon from "../../../assets/images/SuccessIcon.png";
 import { useNavigate } from "react-router-dom";
+import { removeToken } from "../../../services/auth";
 
 export default function StepFive() {
   const navigate = useNavigate();
 
   function handleNext() {
+    removeToken()
     navigate("/");
   }
   return (
@@ -25,7 +27,7 @@ export default function StepFive() {
           </C.Form>
           <C.ContainerButton>
             <C.BtnBlock>
-              <span onClick={handleNext}>meus resultados</span>
+              <span onClick={handleNext}>Ir para o login</span>
             </C.BtnBlock>
           </C.ContainerButton>
         </C.Content>

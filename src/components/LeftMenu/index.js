@@ -3,9 +3,13 @@ import { X, Calendar, Mail, Clipboard, User, ArrowLeft } from "react-feather";
 import profileImg from "../../assets/images/profile-image.png";
 import { StateGlobal } from "../../context/GlobalContext";
 import LogoBranco from "../../assets/images/logo_branco.png";
+import { useNavigate } from "react-router-dom";
+import { removeToken } from "../../services/auth";
+import api from "../../services";
 
 export default function LeftMenu(props) {
   const { setComponents } = StateGlobal();
+  const navigate = useNavigate();
 
   const data = [
     {
@@ -40,6 +44,16 @@ export default function LeftMenu(props) {
     },
   ];
 
+  async function clearToken() {
+    try {
+      const res = await api.post("/api/client/logout");
+      removeToken();
+      navigate("/");
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
   function componentExchange(e) {
     if (e === "Agendamentos") {
       setComponents(1);
@@ -56,8 +70,9 @@ export default function LeftMenu(props) {
     } else if (e === "Meu Perfil") {
       setComponents(5);
       props.setOpenLeft(false);
-    }else{
-      
+    } else if (e === "Sair") {
+      clearToken();
+    } else {
     }
   }
   return (

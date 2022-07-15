@@ -112,3 +112,10 @@ export const Footer = styled.p`
   position: absolute;
   bottom: 0px;
 `;
+
+export const Alert = styled.p`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 12px;
+  color: ${({ theme }) => theme.colors.error};`
+;

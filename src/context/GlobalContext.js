@@ -12,6 +12,7 @@ export default function CountProvider({ children }) {
     phone: "",
     password: "",
     token: "",
+    auxPassword: ""
   });
 
   return (

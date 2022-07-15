@@ -77,3 +77,24 @@ export const Footer = styled.p`
   position: absolute;
   bottom: 0px;
 `;
+
+export const TextDisabled = styled.p`
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 14px;
+  letter-spacing: 0.4px;
+  margin-top: 5%;
+  margin-bottom: 0px;
+  color: ${({ theme }) => theme.colors.grey};
+
+  b {
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    margin-top: 5%;
+    margin-bottom: 0px;
+    cursor: pointer;
+    color: ${({ theme }) => theme.colors.black};
+  }
+`;
