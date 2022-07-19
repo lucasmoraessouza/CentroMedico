@@ -10,9 +10,12 @@ import Procedures from "./components/Procedures";
 import ContactUs from "./components/ContactUs";
 import LeftMenu from "../../components/LeftMenu";
 import MyProfile from "./components/MyProfile";
+
 export default function Home() {
   const { components } = StateGlobal();
   const [openLeft, setOpenLeft] = useState(false);
+  const [progress, setProgress] = useState(true);
+
   return (
     <>
       {openLeft === true ? (

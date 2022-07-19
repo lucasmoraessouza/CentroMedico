@@ -12,7 +12,6 @@ const api = axios.create({
 
 api.interceptors.response.use(
   function (response) {
-    console.log(localStorage.getItem("token"), "teste");
     return response;
   }
   // function (error) {

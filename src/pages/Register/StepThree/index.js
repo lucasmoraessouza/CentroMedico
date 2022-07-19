@@ -17,8 +17,6 @@ export default function StepThree() {
     navigate("/register/4");
   }
 
-  console.log(data_user);
-
   function bodyValidation() {
     if (
       data_user.cpf !== "" &&

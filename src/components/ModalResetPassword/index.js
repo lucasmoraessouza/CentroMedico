@@ -89,7 +89,6 @@ export default function ModalResetPassword(props) {
           <div style={{marginTop: '20px'}}>
             <SecondButton
               text="Atualizar senha"
-              funcao={console.log("teste")}
             />
           </div>
         </Box>

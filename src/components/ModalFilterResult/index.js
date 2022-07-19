@@ -117,7 +117,6 @@ export default function ModalFilterResult(props) {
           <SecondButton
             text="Filtrar"
             disabled={validate}
-            funcao={console.log("teste")}
           />
         </Box>
       </Modal>

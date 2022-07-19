@@ -8,7 +8,7 @@ import { removeToken } from "../../services/auth";
 import api from "../../services";
 
 export default function LeftMenu(props) {
-  const { setComponents } = StateGlobal();
+  const { setComponents, clientData } = StateGlobal();
   const navigate = useNavigate();
 
   const data = [
@@ -89,9 +89,9 @@ export default function LeftMenu(props) {
       />
       <C.Header>
         <img alt="profile" src={profileImg} />
-        <C.TitleHeader>Ana Carolina</C.TitleHeader>
+        <C.TitleHeader>{clientData?.name}</C.TitleHeader>
         <C.SubtitleHeader>Meu ID:</C.SubtitleHeader>
-        <C.Text>343231-21</C.Text>
+        <C.Text>{clientData?.cm_id}</C.Text>
       </C.Header>
       <C.Content>
         <C.MenuOptions>

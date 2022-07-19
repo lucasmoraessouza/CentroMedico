@@ -29,7 +29,7 @@ export default function Login() {
       if (res.data.error === "false") {
         setTimeout(() => {
           navigate("/home");
-        }, [5000]);
+        }, [1000]);
       }
     } catch (err) {
       console.log(err);

@@ -12,8 +12,9 @@ export default function CountProvider({ children }) {
     phone: "",
     password: "",
     token: "",
-    auxPassword: ""
+    auxPassword: "",
   });
+  const [clientData, setClientData] = useState([]);
 
   return (
     <GlobalContext.Provider
@@ -22,6 +23,8 @@ export default function CountProvider({ children }) {
         setComponents,
         data_user,
         setData_user,
+        clientData,
+        setClientData,
       }}
     >
       {children}
@@ -33,10 +36,13 @@ export function StateGlobal() {
   const context = useContext(GlobalContext);
   const { components, setComponents } = context;
   const { data_user, setData_user } = context;
+  const {clientData, setClientData} = context;
   return {
     components,
     setComponents,
     data_user,
     setData_user,
+    clientData, 
+    setClientData
   };
 }
