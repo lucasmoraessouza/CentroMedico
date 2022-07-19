@@ -3,20 +3,20 @@ import * as C from "./styles";
 import { BsCalendar } from "react-icons/bs";
 import { FaLocationArrow } from "react-icons/fa";
 
-export default function ResultBlock() {
+export default function ResultBlock(props) {
   return (
     <C.Container>
       <C.Date>
-        <p id="Day">23</p>
-        <p>Setembro</p>
-        <p>2022</p>
-        <label id="datePlus">22:00</label>
+        <p id="Day">{props?.data?.day}</p>
+        <p>{props?.data?.month_text}</p>
+        <p>{props?.data?.year}</p>
+        <label id="datePlus">{props?.data?.hour}</label>
       </C.Date>
 
       <C.ContainerInfor>
         <C.InfoList>
-          <p id="primaryTitle">Exame nome X</p>
-          <p>Centro Médico - Unidade: Unidade I</p>
+          <p id="primaryTitle">{props?.data?.name}</p>
+          <p>Centro Médico - {props?.data?.address}</p>
           <p id="forma">Telefone: (15) 3323.1234</p>
 
           <C.InfMap>

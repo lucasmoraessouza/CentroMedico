@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import * as C from "./styles";
 import { StateGlobal } from "../../context/GlobalContext";
 import HeaderHome from "../../components/HeaderHome";
@@ -15,6 +15,23 @@ export default function Home() {
   const { components } = StateGlobal();
   const [openLeft, setOpenLeft] = useState(false);
   const [progress, setProgress] = useState(true);
+  const listInnerRef = useRef();
+  const [scrolls, setScrolls] = useState({
+    scrollTop: null,
+    clientHeight: null,
+    scrollHeight: null,
+  });
+
+  const onScroll = () => {
+    let { scrollTop, clientHeight, scrollHeight } = listInnerRef.current;
+    if (listInnerRef.current) {
+      setScrolls({
+        scrollTop: scrollTop,
+        clientHeight: clientHeight,
+        scrollHeight: scrollHeight,
+      });
+    }
+  };
 
   return (
     <>
@@ -26,13 +43,21 @@ export default function Home() {
             <HeaderHome openLeft={openLeft} setOpenLeft={setOpenLeft} />
           </div>
 
-          <C.Section>
+          <C.Section onScroll={() => onScroll()} ref={listInnerRef}>
             {components === 0 ? (
               <SwitchHome />
             ) : components === 1 ? (
-              <Schedules />
+              <Schedules
+                scrollTop={scrolls.scrollTop}
+                clientHeight={scrolls.clientHeight}
+                scrollHeight={scrolls.scrollHeight}
+              />
             ) : components === 2 ? (
-              <Results />
+              <Results
+                scrollTop={scrolls.scrollTop}
+                clientHeight={scrolls.clientHeight}
+                scrollHeight={scrolls.scrollHeight}
+              />
             ) : components === 3 ? (
               <Procedures />
             ) : components === 4 ? (

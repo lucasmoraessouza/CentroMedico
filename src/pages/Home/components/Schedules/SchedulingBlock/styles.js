@@ -6,7 +6,7 @@ export const Container = styled.div`
   background-color: #ffffff;
   box-shadow: 0px 3px 5px 0px #00000045;
   border-radius: 10px;
-  margin: 10px 0px;
+  margin: 15px 0px;
   margin-left: 3%;
   height: 115px;
 `;
@@ -30,7 +30,7 @@ export const Date = styled.div`
     margin-bottom: 3px;
     font-size: 16px;
     font-weight: 500;
-    color: #de2e2e;
+    color: ${({ theme }) => theme.colors.error};
   }
 
   p {
@@ -55,7 +55,7 @@ export const ContainerInfor = styled.div`
 
     span {
       padding: 3px 5px;
-      background-color: #2ede6a;
+      background-color:  ${({ theme }) => theme.colors.button_secundary};
       border-radius: 10px;
       width: 90px;
       color: #fff;
@@ -79,7 +79,7 @@ export const ContainerInfor = styled.div`
   #ValueCardPlus {
     font-weight: 400;
     font-size: 25px;
-    color: #2ede6a;
+    color: ${({ theme }) => theme.colors.button_secundary};
   }
 
   #forma {
@@ -107,7 +107,7 @@ export const InfMap = styled.div`
   width: 245px;
   justify-content: space-between;
   padding: 3px 0px;
-  color: #08559f;
+  color: ${({ theme }) => theme.colors.primary};
   font-weight: 600;
   font-size: 10px;
   text-decoration: underline;

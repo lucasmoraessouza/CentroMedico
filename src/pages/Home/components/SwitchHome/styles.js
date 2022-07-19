@@ -81,3 +81,11 @@ export const ContainerBtnWhatsApp = styled.div`
   margin-top: 60px;
   margin-bottom: 30px;
 `;
+
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+`;

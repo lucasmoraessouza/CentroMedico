@@ -10,20 +10,20 @@ import api from "../../../../services/index";
 import { CircularProgress } from "@mui/material";
 
 export default function SwitchHome(props) {
-  const { components, setComponents, clientData, setClientData } =
+  const { setComponents, clientData, setClientData} =
     StateGlobal();
   const [progress, setProgress] = useState(true);
+  
+
 
   async function getData() {
     try {
       const response = await api.get(`/api/client`);
-      console.log(response);
       setClientData(response.data);
       setProgress(false);
     } catch (err) {
       console.log(err);
       setProgress(true);
-      document.location.reload(true);
     }
   }
 
@@ -34,17 +34,9 @@ export default function SwitchHome(props) {
   return (
     <C.Content>
       {progress ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            width: "100%",
-            height: "100%",
-            alignItems: "center",
-          }}
-        >
-          <CircularProgress />
-        </div>
+        <C.loading>
+          <CircularProgress style={{color: '#0F2554'}}/>
+        </C.loading>
       ) : (
         <>
           <C.Title>

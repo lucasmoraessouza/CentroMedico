@@ -15,6 +15,26 @@ export default function CountProvider({ children }) {
     auxPassword: "",
   });
   const [clientData, setClientData] = useState([]);
+  const [scheduleFilter, setScheduleFilter] = useState({
+    start: "",
+    end: "",
+    currentPage: 1,
+    lastPage: 1,
+    onFilter: false,
+  });
+
+  function verify() {
+    setScheduleFilter({
+      start: "",
+      end: "",
+      currentPage: 1,
+      lastPage: 1,
+      onFilter: false,
+    });
+  }
+  useEffect(() => {
+    verify();
+  }, [components]);
 
   return (
     <GlobalContext.Provider
@@ -25,6 +45,8 @@ export default function CountProvider({ children }) {
         setData_user,
         clientData,
         setClientData,
+        scheduleFilter,
+        setScheduleFilter,
       }}
     >
       {children}
@@ -36,13 +58,16 @@ export function StateGlobal() {
   const context = useContext(GlobalContext);
   const { components, setComponents } = context;
   const { data_user, setData_user } = context;
-  const {clientData, setClientData} = context;
+  const { clientData, setClientData } = context;
+  const { scheduleFilter, setScheduleFilter } = context;
   return {
     components,
     setComponents,
     data_user,
     setData_user,
-    clientData, 
-    setClientData
+    clientData,
+    setClientData,
+    scheduleFilter,
+    setScheduleFilter,
   };
 }

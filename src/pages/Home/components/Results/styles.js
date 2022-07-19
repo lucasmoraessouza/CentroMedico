@@ -30,3 +30,7 @@ export const ContainerTitle = styled.div`
     border-radius: 5px;
   }
 `;
+
+export const SBlock = styled.div`
+  padding-bottom: 5px;
+`;

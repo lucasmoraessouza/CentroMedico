@@ -29,7 +29,7 @@ function switchState() {
       <div>
         {ArrayNumber.map((item, index) => {
           return (
-            <div
+            <C.SBlock
               onClick={() => {
                 setOpenAccordion((prevState) => (prevState ? false : true));
               }}
@@ -38,7 +38,7 @@ function switchState() {
                 openAccordion={openAccordion}
                 setOpenAccordion={setOpenAccordion}
               />
-            </div>
+            </C.SBlock>
           );
         })}
       </div>
