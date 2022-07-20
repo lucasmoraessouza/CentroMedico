@@ -153,3 +153,11 @@ export const BtnPrint = styled.button`
     margin-left: 10px;
   }
 `;
+
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+`;

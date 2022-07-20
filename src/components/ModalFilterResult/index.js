@@ -6,6 +6,7 @@ import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
 import SecondButton from "../Button/index";
 import { X } from "react-feather";
+import { StateGlobal } from "../../context/GlobalContext";
 // import { StateGlobal } from "../../Utility/Context/GlobalContext";
 
 const style = {
@@ -22,17 +23,30 @@ const style = {
 };
 
 export default function ModalFilterResult(props) {
-  // const { bodyFilterHistoric , setBodyFilterHistoric } = StateGlobal()
-  const [startDate, setStartDate] = useState();
-  const [endDate, setEndDate] = useState();
+  const { resultsFilter, setResultsFilter } = StateGlobal();
+
   const [validate, setValidate] = useState(true);
 
+  function sendData() {
+    setResultsFilter({
+      start: resultsFilter.start,
+      end: resultsFilter.end,
+      currentPage: 1,
+      lastPage: 2,
+      onFilter: true,
+    });
+
+    props.funcao();
+  }
+
   function Disabled() {
+    console.log("resultsFilter", resultsFilter);
+
     if (
-      startDate === undefined ||
-      startDate === "" ||
-      endDate === undefined ||
-      endDate === ""
+      resultsFilter.start === undefined ||
+      resultsFilter.start === "" ||
+      resultsFilter.end === undefined ||
+      resultsFilter.end === ""
     ) {
       setValidate(true);
     } else {
@@ -42,18 +56,7 @@ export default function ModalFilterResult(props) {
 
   useEffect(() => {
     Disabled();
-  }, [startDate, endDate]);
-
-  // function sendFilter() {
-  //   setBodyFilterHistoric({
-  //     start: startDate,
-  //       end: endDate,
-  //       page: 1,
-  //       send: true
-  //   })
-
-  //   props.funcao()
-  // }
+  }, [resultsFilter.start, resultsFilter.end]);
 
   return (
     <div>
@@ -100,7 +103,7 @@ export default function ModalFilterResult(props) {
               type="date"
               style={{ marginBottom: "15px" }}
               onChange={(e) => {
-                setStartDate(e.target.value);
+                setResultsFilter({ ...resultsFilter, start: e.target.value });
               }}
             />
             <label id="to"> Até</label>
@@ -110,14 +113,11 @@ export default function ModalFilterResult(props) {
               type="date"
               style={{ marginBottom: "30px" }}
               onChange={(e) => {
-                setEndDate(e.target.value);
+                setResultsFilter({ ...resultsFilter, end: e.target.value });
               }}
             />
           </div>
-          <SecondButton
-            text="Filtrar"
-            disabled={validate}
-          />
+          <SecondButton text="Filtrar" disabled={validate} funcao={sendData} />
         </Box>
       </Modal>
     </div>

@@ -23,8 +23,24 @@ export default function CountProvider({ children }) {
     onFilter: false,
   });
 
+  const [resultsFilter, setResultsFilter] = useState({
+    start: "",
+    end: "",
+    currentPage: 1,
+    lastPage: 1,
+    onFilter: false,
+  });
+
   function verify() {
     setScheduleFilter({
+      start: "",
+      end: "",
+      currentPage: 1,
+      lastPage: 1,
+      onFilter: false,
+    });
+
+    setResultsFilter({
       start: "",
       end: "",
       currentPage: 1,
@@ -47,6 +63,8 @@ export default function CountProvider({ children }) {
         setClientData,
         scheduleFilter,
         setScheduleFilter,
+        resultsFilter, 
+        setResultsFilter
       }}
     >
       {children}
@@ -60,6 +78,9 @@ export function StateGlobal() {
   const { data_user, setData_user } = context;
   const { clientData, setClientData } = context;
   const { scheduleFilter, setScheduleFilter } = context;
+  const { resultsFilter, setResultsFilter } = context;
+
+
   return {
     components,
     setComponents,
@@ -69,5 +90,7 @@ export function StateGlobal() {
     setClientData,
     scheduleFilter,
     setScheduleFilter,
+    resultsFilter, 
+    setResultsFilter
   };
 }

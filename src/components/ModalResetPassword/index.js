@@ -67,7 +67,7 @@ export default function ModalResetPassword(props) {
             </C.SectionInput>
 
             <C.SectionInput>
-              <label>nova senha</label>
+              <label>Nova senha</label>
               <TextField
                 fullWidth={true}
                 size="small"

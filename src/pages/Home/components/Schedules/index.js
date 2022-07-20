@@ -12,10 +12,11 @@ export default function Schedules(props) {
   const [open, setOpen] = useState(false);
   const [progress, setProgress] = useState(true);
   const [schedulingData, setSchedulingData] = useState([]);
+  const { scheduleFilter, setScheduleFilter } = StateGlobal();
+
   function switchState() {
     setOpen((prevState) => (prevState ? false : true));
   }
-  const { scheduleFilter, setScheduleFilter } = StateGlobal();
 
   async function getSchedulingData() {
     setProgress(true);
