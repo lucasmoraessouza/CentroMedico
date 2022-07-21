@@ -10,6 +10,7 @@ import Procedures from "./components/Procedures";
 import ContactUs from "./components/ContactUs";
 import LeftMenu from "../../components/LeftMenu";
 import MyProfile from "./components/MyProfile";
+import { CircularProgress } from "@mui/material";
 
 export default function Home() {
   const { components } = StateGlobal();
@@ -33,49 +34,63 @@ export default function Home() {
     }
   };
 
+  useEffect(() => {
+    setTimeout(() => {
+      setProgress(false);
+    }, [500]);
+  }, []);
+
   return (
     <>
-      {openLeft === true ? (
-        <LeftMenu openLeft={openLeft} setOpenLeft={setOpenLeft} />
+      {progress ? (
+        <C.loading>
+          <CircularProgress style={{ color: "#0F2554" }} />
+        </C.loading>
       ) : (
-        <C.Container>
-          <div>
-            <HeaderHome openLeft={openLeft} setOpenLeft={setOpenLeft} />
-          </div>
+        <>
+          {openLeft === true ? (
+            <LeftMenu openLeft={openLeft} setOpenLeft={setOpenLeft} />
+          ) : (
+            <C.Container>
+              <div>
+                <HeaderHome openLeft={openLeft} setOpenLeft={setOpenLeft} />
+              </div>
 
-          <C.Section onScroll={() => onScroll()} ref={listInnerRef}>
-            {components === 0 ? (
-              <SwitchHome />
-            ) : components === 1 ? (
-              <Schedules
-                scrollTop={scrolls.scrollTop}
-                clientHeight={scrolls.clientHeight}
-                scrollHeight={scrolls.scrollHeight}
-              />
-            ) : components === 2 ? (
-              <Results
-                scrollTop={scrolls.scrollTop}
-                clientHeight={scrolls.clientHeight}
-                scrollHeight={scrolls.scrollHeight}
-              />
-            ) : components === 3 ? (
-              <Procedures
-                scrollTop={scrolls.scrollTop}
-                clientHeight={scrolls.clientHeight}
-                scrollHeight={scrolls.scrollHeight}
-              />
-            ) : components === 4 ? (
-              <ContactUs />
-            ) : components === 5 ? (
-              <MyProfile />
-            ) : (
-              ""
-            )}
-          </C.Section>
-          <div>
-            <FooterHome />
-          </div>
-        </C.Container>
+              <C.Section onScroll={() => onScroll()} ref={listInnerRef}>
+                {components === 0 ? (
+                  <SwitchHome />
+                ) : components === 1 ? (
+                  <Schedules
+                    scrollTop={scrolls.scrollTop}
+                    clientHeight={scrolls.clientHeight}
+                    scrollHeight={scrolls.scrollHeight}
+                  />
+                ) : components === 2 ? (
+                  <Results
+                    scrollTop={scrolls.scrollTop}
+                    clientHeight={scrolls.clientHeight}
+                    scrollHeight={scrolls.scrollHeight}
+                  />
+                ) : components === 3 ? (
+                  <Procedures
+                    scrollTop={scrolls.scrollTop}
+                    clientHeight={scrolls.clientHeight}
+                    scrollHeight={scrolls.scrollHeight}
+                  />
+                ) : components === 4 ? (
+                  <ContactUs />
+                ) : components === 5 ? (
+                  <MyProfile />
+                ) : (
+                  ""
+                )}
+              </C.Section>
+              <div>
+                <FooterHome />
+              </div>
+            </C.Container>
+          )}
+        </>
       )}
     </>
   );

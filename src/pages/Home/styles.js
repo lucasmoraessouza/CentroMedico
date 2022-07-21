@@ -17,3 +17,10 @@ export const Section = styled.div`
   justify-content: flex-start;
 `;
 
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+`;

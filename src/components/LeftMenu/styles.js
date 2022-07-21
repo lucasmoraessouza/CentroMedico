@@ -16,6 +16,7 @@ export const Header = styled.div`
     height: 125px;
     border-radius: 50%;
     background-size: cover;
+    object-fit: cover;
   }
 `;
 

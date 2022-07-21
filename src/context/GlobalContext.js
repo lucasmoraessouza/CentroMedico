@@ -14,7 +14,16 @@ export default function CountProvider({ children }) {
     token: "",
     auxPassword: "",
   });
-  const [clientData, setClientData] = useState([]);
+  const [clientData, setClientData] = useState({
+    id: "",
+    cm_id: "",
+    name: "",
+    cpf: "",
+    birthday: "",
+    email: "",
+    phone: "",
+    photo: null,
+  });
   const [scheduleFilter, setScheduleFilter] = useState({
     start: "",
     end: "",

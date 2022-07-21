@@ -85,8 +85,8 @@ export const ContainerBtnWhatsApp = styled.div`
   display: flex;
   justify-content: center;
   padding-top: 60px;
-  padding-bottom: 30px`
-  ;
+  padding-bottom: 30px;
+`;
 
 export const loading = styled.div`
   display: flex;

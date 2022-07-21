@@ -7,6 +7,7 @@ import Typography from "@mui/material/Typography";
 import { TextField } from "@mui/material";
 import SecondButton from "../Button/index";
 import { X } from "react-feather";
+import api from "../../services";
 // import { StateGlobal } from "../../Utility/Context/GlobalContext";
 
 const style = {
@@ -23,6 +24,45 @@ const style = {
 };
 
 export default function ModalResetPassword(props) {
+  const [password, setPassword] = useState("");
+  const [new_password, setNew_password] = useState("");
+  const [aux_password, setAux_password] = useState("");
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
+
+  function validateButton() {
+    if (
+      password?.length >= 8 &&
+      new_password?.length >= 8 &&
+      aux_password.length >= 8 &&
+      new_password === aux_password
+    ) {
+      setIsDisabled(false);
+    } else {
+      setIsDisabled(true);
+    }
+  }
+
+  async function handleUpdateInfo() {
+    try {
+      setIsLoading(true);
+      const res = await api.put("/api/client/update", {
+        password: password,
+        new_password: new_password,
+      });
+      if (res.data.error === "false") {
+        props.funcao();
+      }
+      setIsLoading(false);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+
+  useEffect(() => {
+    validateButton();
+  }, [new_password, aux_password, password]);
+
   return (
     <div>
       <Modal
@@ -63,6 +103,8 @@ export default function ModalResetPassword(props) {
                 size="small"
                 id="outlined-basic"
                 variant="outlined"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </C.SectionInput>
 
@@ -73,6 +115,8 @@ export default function ModalResetPassword(props) {
                 size="small"
                 id="outlined-basic"
                 variant="outlined"
+                value={aux_password}
+                onChange={(e) => setAux_password(e.target.value)}
               />
             </C.SectionInput>
 
@@ -83,12 +127,16 @@ export default function ModalResetPassword(props) {
                 size="small"
                 id="outlined-basic"
                 variant="outlined"
+                value={new_password}
+                onChange={(e) => setNew_password(e.target.value)}
               />
             </C.SectionInput>
           </C.ContainerForm>
-          <div style={{marginTop: '20px'}}>
+          <div style={{ marginTop: "20px" }}>
             <SecondButton
               text="Atualizar senha"
+              disabled={isDisabled}
+              funcao={handleUpdateInfo}
             />
           </div>
         </Box>

@@ -1,6 +1,6 @@
 import * as C from "./styles";
 import { X, Calendar, Mail, Clipboard, User, ArrowLeft } from "react-feather";
-import profileImg from "../../assets/images/profile-image.png";
+import profileImg from "../../assets/images/logoCentroMedico.png";
 import { StateGlobal } from "../../context/GlobalContext";
 import LogoBranco from "../../assets/images/logo_branco.png";
 import { useNavigate } from "react-router-dom";
@@ -88,7 +88,10 @@ export default function LeftMenu(props) {
         style={{ position: "fixed", right: "15", top: "15" }}
       />
       <C.Header>
-        <img alt="profile" src={profileImg} />
+        <img
+          alt="profile"
+          src={clientData.photo !== null ? clientData.photo : profileImg}
+        />
         <C.TitleHeader>{clientData?.name}</C.TitleHeader>
         <C.SubtitleHeader>Meu ID:</C.SubtitleHeader>
         <C.Text>{clientData?.cm_id}</C.Text>

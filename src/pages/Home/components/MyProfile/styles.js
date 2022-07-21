@@ -13,11 +13,24 @@ export const ContainerInfoImg = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: no-repeat center;
+  background-size: cover;
 `;
 
 export const ContainerImg = styled.div`
   display: flex;
   align-items: flex-end;
+  margin-right: 10px;
+  width: 200px;
+  height: 200px;
+`;
+
+export const Perfil = styled.img`
+  width: 200px;
+  height: 200px;
+  border: solid 3px ${({ theme }) => theme.colors.primary};
+  border-radius: 50%;
+  object-fit: cover;
 `;
 
 export const ItemIconEdit = styled.div`
@@ -83,4 +96,30 @@ export const BtnAtt = styled.button`
     margin-left: 10px;
     font-size: 18px;
   }
+`;
+export const BtnAtt2 = styled.button`
+  margin: 0px 0px 20px 0px;
+  width: 95%;
+  height: 45px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 10px;
+  color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+
+  span {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+`;
+
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 `;

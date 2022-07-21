@@ -1,11 +1,11 @@
 import * as C from "./styles";
-import profileImg from "../../assets/images/profile-image.png";
+import profileImg from "../../assets/images/logoCentroMedico.png";
 import { Menu } from "react-feather";
 import { StateGlobal } from "../../context/GlobalContext";
 import { IoIosArrowBack } from "react-icons/io";
 
 export default function HeaderHome(props) {
-  const { components, setComponents } = StateGlobal();
+  const { components, setComponents, clientData } = StateGlobal();
   const backValue = localStorage.getItem("backValue");
 
   function screenChangeBack() {
@@ -31,7 +31,10 @@ export default function HeaderHome(props) {
             />
             <span>Voltar</span>
           </C.ActionBack>
-          <img alt="profile" src={profileImg} />
+          <img
+            alt="profile"
+            src={clientData.photo !== null ? clientData.photo : profileImg}
+          />
         </C.Header>
       ) : (
         <C.Header>
@@ -44,7 +47,10 @@ export default function HeaderHome(props) {
               props.setOpenLeft(true);
             }}
           />
-          <img alt="profile" src={profileImg} />
+          <img
+            alt="profile"
+            src={clientData.photo !== null ? clientData.photo : profileImg}
+          />
         </C.Header>
       )}
     </>

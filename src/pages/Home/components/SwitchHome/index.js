@@ -12,6 +12,9 @@ import { CircularProgress } from "@mui/material";
 export default function SwitchHome(props) {
   const { setComponents, clientData, setClientData } = StateGlobal();
   const [progress, setProgress] = useState(true);
+  const attPhoto = localStorage.getItem("attPhoto");
+
+  // console.log(clientData)
 
   function redirect() {
     window.open(
@@ -33,6 +36,13 @@ export default function SwitchHome(props) {
 
   useEffect(() => {
     getData();
+  }, []);
+
+  useEffect(() => {
+    if (attPhoto) {
+      setComponents(5);
+      localStorage.removeItem("attPhoto");
+    }
   }, []);
 
   return (
