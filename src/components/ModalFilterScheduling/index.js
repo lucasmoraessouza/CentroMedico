@@ -40,7 +40,6 @@ export default function ModalFilterScheduling(props) {
   }
 
   function Disabled() {
-    console.log("scheduleFilter", scheduleFilter);
 
     if (
       scheduleFilter.start === undefined ||

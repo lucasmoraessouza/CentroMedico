@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  height: 100%;
+
   #mySchedules {
     color: ${({ theme }) => theme.colors.primary};
     font-size: 25px;
@@ -36,5 +38,35 @@ export const CardPrint = styled.div`
   span {
     font-size: 16px;
     font-weight: 500;
+  }
+`;
+
+export const IconX = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+`;
+
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+`;
+
+export const BtnPrint = styled.div`
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+
+  &:hover,
+  &:focus {
+    background-color: #f5f5f5c4;
   }
 `;

@@ -59,7 +59,11 @@ export default function Home() {
                 scrollHeight={scrolls.scrollHeight}
               />
             ) : components === 3 ? (
-              <Procedures />
+              <Procedures
+                scrollTop={scrolls.scrollTop}
+                clientHeight={scrolls.clientHeight}
+                scrollHeight={scrolls.scrollHeight}
+              />
             ) : components === 4 ? (
               <ContactUs />
             ) : components === 5 ? (

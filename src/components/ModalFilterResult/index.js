@@ -40,8 +40,6 @@ export default function ModalFilterResult(props) {
   }
 
   function Disabled() {
-    console.log("resultsFilter", resultsFilter);
-
     if (
       resultsFilter.start === undefined ||
       resultsFilter.start === "" ||

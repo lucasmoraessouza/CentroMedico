@@ -28,6 +28,10 @@ export const TextInformation = styled.p`
   color: ${({ theme }) => theme.colors.black};
 `;
 
+export const ContentBlock = styled.div`
+  min-height: 180px;
+`;
+
 export const TitleBaseboard = styled.p`
   font-weight: 700;
   font-size: 26px;
@@ -48,11 +52,13 @@ export const Bar = styled.div`
 
 export const ContainerCard = styled.div`
   overflow: overlay;
+  height: 120px;
 `;
 
 export const CardLine = styled.div`
   display: flex;
-  width: 150%;
+  width: 145%;
+  height: 100px;
   margin-top: 10px;
   margin-left: 20px;
 `;
@@ -78,9 +84,9 @@ export const InfoCard = styled.span`
 export const ContainerBtnWhatsApp = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 60px;
-  margin-bottom: 30px;
-`;
+  padding-top: 60px;
+  padding-bottom: 30px`
+  ;
 
 export const loading = styled.div`
   display: flex;

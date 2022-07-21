@@ -145,7 +145,6 @@ export default function Results(props) {
                         setResultData((oldState) => [...oldState]);
                       }
 
-                      console.log(ResultData);
                     }}
                   >
                     <ResultBlock data={item} />

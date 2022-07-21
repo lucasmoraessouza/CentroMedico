@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  height: 100%;
+
   #mySchedules {
     color: ${({ theme }) => theme.colors.primary};
     font-size: 25px;
@@ -19,6 +21,8 @@ export const ContainerForm = styled.div`
 export const SectionInput = styled.div`
   width: 95%;
   margin-top: 10px;
+  display: flex;
+  flex-direction: column;
 
   label {
     font-size: 18px;
@@ -53,6 +57,31 @@ export const BtnPrint = styled.button`
     margin-left: 10px;
     font-size: 18px;
   }
+`;
+
+export const BtnPrint2 = styled.button`
+  width: 130px;
+  height: 45px;
+  border: none;
+  background-color: #ccc;
+  border-radius: 10px;
+  color: #3d3d3d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  span {
+    margin-left: 10px;
+    font-size: 18px;
+  }
+`;
+
+export const loading = styled.div`
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  align-items: center;
 `;
 
 export const ContainerBtnWhatsApp = styled.div`
